@@ -1,0 +1,10 @@
+#twitter-feed {
+  a {
+    font-size: 0.75em;
+    line-height: 1em;
+    color: black;
+    &:hover {
+      color: $lightgrey;
+    }
+  }
+}

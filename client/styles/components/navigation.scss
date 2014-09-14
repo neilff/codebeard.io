@@ -1,0 +1,85 @@
+#navigation {
+
+  .logo {
+    width: 20%;
+    max-width: 75px;
+    display: inline-block;
+
+    img {
+      padding-top: 3px;
+    }
+  }
+
+  .brand {
+    text-transform: uppercase;
+    font-family: Lato;
+    font-size: 12pt;
+    background-color: #35cffd;
+    display: inline-block;
+    width: 80%;
+    max-width: 150px;
+    height: 51px;
+    padding-top: 14px;
+    color: #efefef;
+    text-align: center;
+    font-weight: 100;
+    a {
+      @include transition();
+      color: $white;
+      &:hover {
+        color: $grey;
+      }
+    }
+  }
+
+  .links {
+    background: $white;
+    padding:  10px 15px;
+    float: right;
+    margin: 0;
+    list-style-type: none;
+    text-transform: uppercase;
+    font-size: 0.65em;
+
+    li {
+      float: left;
+      padding: 0 10px;
+
+      a {
+        @include transition();
+        color: $blue;
+        padding: 5px;
+        &:hover {
+          color: $turq / 2;
+        }
+      }
+
+      &:after {
+        content: '/';
+        padding-left: 20px;
+      }
+
+      &:last-child:after {
+        padding-left: 0;
+        content: '';
+      }
+    }
+
+    .highlight {
+      a {
+        color: $turq * 1.25;
+        border-bottom: 1px solid $blue * 3;
+      }
+    }
+
+    .divider {
+      padding: 0 5px;
+    }
+  }
+
+  border-top: 5px solid $lightblue;
+  font-weight: 100;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+}

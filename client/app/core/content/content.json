@@ -1,0 +1,76 @@
+{
+  "menuLinks": [
+    {
+      "title": "About",
+      "url": "#/"
+    },
+    {
+      "title": "Work",
+      "url": "#/work/list"
+    },
+    {
+      "title": "Email",
+      "url": "mailto:neilff@gmail.com"
+    }
+  ],
+  "aboutContent": {
+    "title": "Hello, my name is Neil Fenton",
+    "subtitle": "<h3>I'm a JavaScript developer from Toronto, Canada.</h3><h3>I specialize in <a href=\"http://www.angularjs.org\">AngularJS</a> development.</h3>",
+    "description": "<p>I'm interested in all things web. I want to learn the latest bleeding edge technologies. I don't want to become complacent, I want to always be evolving.</p><p>My primary focus is modern JavaScript and more specifically, modern web application development. I'm interested in building unique, enterprise-level web applications.</p>",
+    "credentials": [
+      {
+        "title": "Humber College - 2012 to 2013",
+        "description": "Postgraduate Certificate in Web Development"
+      },
+      {
+        "title": "Ryerson University - 2005 to 2009",
+        "description": "Bachelor of Fine Arts in Photographic Studies"
+      }
+    ],
+    "skills": [
+      {
+        "title": "AngularJS",
+        "score": 90
+      },
+      {
+        "title": "Gulp",
+        "score": 90
+      },
+      {
+        "title": "SASS",
+        "score": 90
+      },
+      {
+        "title": "Node.Js",
+        "score": 70
+      },
+      {
+        "title": "MongoDB",
+        "score": 50
+      }
+    ]
+  },
+  "footerLinks": [
+    {
+      "url": "https://github.com/neilff",
+      "icon": "github",
+      "title": "Github"
+    },
+    {
+      "url": "http://twitter.com/neil_fenton",
+      "icon": "twitter",
+      "title": "Twitter"
+    },
+    {
+      "url": "http://ca.linkedin.com/pub/neil-fenton/21/1b8/765",
+      "icon": "linkedin",
+      "title": "LinkedIn"
+    }
+  ],
+  "footerCopyright": "&copy; Copyright 2014 Neil Fenton",
+  "contact": {
+    "phone": "416 625 3715",
+    "email": "neilff@gmail.com"
+  },
+  "currentlyWorking": "Currently working @ <a href=\"http://www.rangle.io\" alt=\"rangle.io\" target=\"_blank\">rangle.io</a>"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "codebeard.io-portfolio",
+  "version": "0.0.0",
+  "description": "codebeard.io website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neilff/codebeard.io-portfolio.git"
+  },
+  "author": "Neil Fenton",
+  "bugs": {
+    "url": "https://github.com/neilff/codebeard.io-portfolio/issues"
+  },
+  "homepage": "https://github.com/neilff/codebeard.io-portfolio",
+  "dependencies": {
+    "angular": "~1.2.23",
+    "lodash": "~2.4.1",
+    "angular-ui-router": "~0.2.10",
+    "angular-sanitize": "0.0.1",
+    "jquery": "~2.1.1"
+  },
+  "devDependencies": {
+    "gulp": "~3.8.8",
+    "connect-livereload": "~0.4.0",
+    "gulp-livereload": "~2.1.1",
+    "tiny-lr": "~0.1.4",
+    "express": "~4.9.0",
+    "gulp-jshint": "~1.8.4",
+    "gulp-concat": "~2.4.0",
+    "gulp-browserify": "~0.5.0",
+    "browserify": "~5.11.2",
+    "gulp-sass": "~0.7.3",
+    "gulp-autoprefixer": "~1.0.0",
+    "gulp-rename": "~1.2.0"
+  }
+}

@@ -1,0 +1,72 @@
+
+.slideshow-wrapper {
+  margin-bottom: 1em;
+}
+
+.project-images {
+  text-align: center;
+  img {
+    max-width: 100%;
+    margin-bottom: 1em;
+  }
+}
+
+#project-description {
+
+  h1 {
+    font-weight: 200;
+    color: $orange;
+    font-size: 0.65em;
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+
+  h3 {
+    font-size: 1em;
+    margin: 0 0 1.5em 0;
+    color: $lightgrey;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0 0 1.5em 0;
+    list-style-type: none;
+    li {
+      list-style-type: none;
+      font-size: 0.85em;
+      color: $grey;
+    }
+  }
+
+  .button-wrapper {
+    margin: 1em 0;
+    text-align: center;
+  }
+
+  .btn-website {
+    @include gradient($lightblue, $lightblue, $lightblue);
+    padding: 1em 1.5em;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    color: $white;
+    &:hover {
+      color: $white;
+      @include gradient($lightblue, $lightblue / 1.15, $lightblue);
+    }
+
+    &:active {
+      color: $white;
+      @include gradient($lightblue / 1.15, $lightblue, $lightblue);
+    }
+  }
+}

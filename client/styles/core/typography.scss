@@ -1,0 +1,12 @@
+p {
+  font-size: 1.25em;
+  font-family: $font-family;
+  font-weight: 200;
+}
+
+p.lead {
+  font-family: $font-family;
+  font-weight: 200;
+  font-size: 1.75em;
+  color: #777;
+}

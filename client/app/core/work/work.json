@@ -1,0 +1,45 @@
+[
+  {
+    "title": "Liqbo - LCBO Finder",
+    "subtitle": "Cordova + AngularJS",
+    "id": "liqbo",
+    "tags": ["angularjs", "mvc", "cordova", "mobile", "localstorage"],
+    "img": "liqbo.jpg",
+    "img_detail": ["liqbo-image-1.jpg", "liqbo-image-3.jpg", "liqbo-image-4.jpg"],
+    "description": "<p>Liqbo represent my first attempt to create a HTML5 mobile web application using Apache Cordova (PhoneGap).</p> <p>This application uses the LCBO API and allows users to search for products and stores that are stocked by the LCBO. It has the ability to do the following: find stores near the users location (GPS), find details of a specific product, find where the nearest store is that carries a specific product, search a specific store for a product, and save favourites for both stores and products.</p> <p>This project served as a learning project for me, it was completed over a weekend as I attempted to deep dive into AngularJS on mobile.</p>",
+    "technologies": ["AngularJS", "Apache Cordova", "Ionic Framework", "LocalStorage"],
+    "github": "https://github.com/neilff/liqbo-angular-ionic"
+  },
+  {
+    "title": "Assist",
+    "subtitle": "PHP MVC Application",
+    "id": "assist",
+    "tags": ["php", "mvc"],
+    "img": "assist.jpg",
+    "img_detail": ["assist-image-1.jpg", "assist-image-3.jpg", "assist-image-4.jpg"],
+    "description": "<p>The idea behind Assist was simple: simplify the experience of joining adult recreational sports leagues. As a recreational hockey player myself, I found it a frustrating experience trying to work with my leagues website. Each year I had to re-register as a new player, and my statistics were never saved.</p><p>We decided to use hockey as the sport we want to manage, but kept in mind that this could be used for any recreational sport team. Each user would register once and each player’s statistics would be stored in detail. We wanted to provide users with a professional league-style website, capturing and providing as much detail as possible.</p><p>              The end result is Assist - a scalable, league management application. With this application we are able to create and score keep live hockey games. As games are documented in real time, the website reflects all of the gathered data. Player statistics are captured and are publicly accessible to all users.</p><p>For this project, I was responsible for designing many aspects, such as, the scorekeeping application, the live scoring updates, player and team profiles. </p>",
+    "technologies": ["PHP", "MVC", "Codeigniter"],
+    "url": "http://wreckit.teamassist.ca"
+  },
+  {
+    "title": "Robin Watson",
+    "subtitle": "Wordpress Theme",
+    "id": "robin-watson",
+    "tags": ["wordpress", "php", "css"],
+    "img": "robin.jpg",
+    "img_detail": ["robin-image-1.jpg", "robin-image-4.jpg"],
+    "description": "<p>Robin wanted a simple site that allowed him to provide his fans with dates for upcoming shows, allow them to contact him, and show off his latest recordings. The flexibility and the gentle learning curve of Wordpress fit the project requirements well.</p><p>The end result was a user-friendly single page website. The responsive design means it is compatible on mobile, tablet, and desktop devices.</p>",
+    "technologies": ["Wordpress", "jQuery", "Bootstrap"],
+    "url": "http://www.robin-watson.com/"
+  },
+  {
+    "title": "Scout Design",
+    "subtitle": "CSS Layout",
+    "id": "scout-design",
+    "tags": ["css", "html"],
+    "img": "scout.jpg",
+    "img_detail": ["scout-image-1.jpg", "scout-image-4.jpg"],
+    "description": "<p>This prototype was created for one of my courses at Humber College. The project asked to build a mockup, and then convert the template to functional CSS and HTML.</p><p>I proposed a website for a fictitious web development company titled Scout. The end result is a simple, effective, and easy to read design. The website uses both CSS3 techniques as well as HTML5 semantic tags.</p>",
+    "technologies": ["CSS3", "HTML5"]
+  }
+]

@@ -1,0 +1,35 @@
+<div id="content">
+  <div id="work" class="row">
+    <div class="small-12 large-7 columns project-images">
+
+      <div id="prev">
+        <a href="#/work/{{prev}}"><i class="icon-chevron-left"></i></a>
+      </div>
+
+      <div id="next">
+        <a href="#/work/{{next}}"><i class="icon-chevron-right"></i></a>
+      </div>
+
+      <ul class="no-bullets">
+        <li ng-repeat="image in project.img_detail"><img ng-src="img/work/{{image}}" alt="Assist" /></li>
+      </ul>
+    </div>
+    <div id="project-description" class="small-12 large-5 columns">
+      <h1>Project Case Study</h1>
+      <h2>{{project.title}}</h2>
+      <h3>{{project.subtitle}}</h3>
+
+      <span ng-bind-html="project.description">{{project.description}}</span>
+
+      <p>
+        <h1>Technologies Used</h1>
+        <ul>
+          <li ng-repeat="tech in project.technologies">{{tech}}</li>
+        </ul>
+      </p>
+      <p class="button-wrapper">
+        <a ng-if="project.url" href="{{project.url}}" target="_blank" class="btn-website">View Website</a> <a ng-if="project.github" href="{{project.github}}" target="_blank" class="btn-website"><i class="icon-github" alt="Github"></i> View Github</a>
+      </p>
+    </div>
+  </div>
+</div>

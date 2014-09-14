@@ -1,0 +1,88 @@
+<!doctype html>
+<html ng-app="codebeard">
+<head>
+  <!-- meta tags -->
+  <meta charset="utf-8">
+  <title>codebeard.io - Toronto based web developer</title>
+  <meta name="description" content="Web developer portfolio of Neil Fenton">
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width" />
+
+  <link rel="shortcut icon" href="img/favicon.ico">
+
+  <!-- google font -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+  <!-- css files -->
+  <link rel="stylesheet" href="css/foundation.min.css" />
+  <link rel="stylesheet" href="css/font-awesome.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body ng-controller="FooterController">
+
+  <header id="navigation" ng-controller="MenuController">
+    <div class="row">
+      <div class="small-6 large-3 columns">
+        <span class="logo"><img src="img/codebeard.svg" /></span><span class="brand"><a href="#/">Codebeard.io</a></span>
+      </div>
+      <nav class="small-6 large-9 columns">
+        <ul id="menu" class="navigation links">
+          <li ng-repeat="link in menu" app-menu-link><a href="{{link.url}}" alt="{{link.title}}">{{link.title}}</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="view-container">
+    <div ui-view class="view-frame"></div>
+  </div>
+
+  <div id="footer">
+    <div id="upper-footer" class="row">
+      <div class="large-4 columns">
+        <h3 class="footer">Contact</h3>
+        <p>P: {{contact.phone}}</p>
+        <p>E: <a href="mailto:{{contact.email}}" alt="Email me">{{contact.email}}</a></p>
+      </div>
+      <div class="large-4 columns">
+        <h3 class="footer">Availability</h3>
+        <p ng-bind-html="currentlyWorking"></p>
+      </div>
+      <div class="large-4 columns">
+        <h3 class="footer">Latest Tweet</h3>
+        <div id="twitter-feed">
+          <a href="http://twitter.com/neil_fenton" target="_blank">@neil_fenton: {{twitter.text}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="lower-footer">
+    <div class="row">
+      <div class="large-5 columns">
+        <p ng-bind-html="footerCopyright"></p>
+      </div>
+      <div class="large-7 columns">
+        <ul>
+          <li ng-repeat="link in footerLinks"><a href="{{link.url}}"><i class="icon-{{link.icon}}" alt="{{link.title}}"></i> <span>{{link.title | uppercase}}</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- javascript files -->
+  <script src="app/bundle.js"></script>
+
+  <!-- google analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-47892550-1', 'codebeard.io');
+    ga('send', 'pageview');
+  </script>
+
+</body>
+</html>

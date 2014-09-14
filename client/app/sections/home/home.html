@@ -1,0 +1,41 @@
+<div id="content">
+    <div class="hero-unit">
+        <div id="content-quote" class="row">
+            <div class="large-12 columns">
+                <h2>{{content.title}}</h2>
+                <span ng-bind-html="content.subtitle"></span>
+            </div>
+        </div>
+        <div id="read-more" class="row">
+            <div class="large-12 columns">
+                <a href="#resume" class="scroll" app-scroll-to>Read More</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="resume" class="row">
+        <div class="large-7 columns">
+            <div class="resume-block">
+                <h2 class="subtitle">Mission Statement</h2>
+                <span ng-bind-html="content.description"></span>
+            </div>
+        </div>
+
+        <div class="large-5 columns">
+            <div class="resume-block">
+                <h2 class="subtitle">Educational Background</h2>
+                <p ng-repeat="education in credentials">
+                    <span>{{education.title}}</span>
+                    <span class="education">{{education.description}}</span>
+                </p>
+            </div>
+
+            <div class="resume-block">
+                <h2 class="subtitle">Developer Skills</h2>
+                <table class="none">
+                    <tr ng-repeat="skill in skills" app-dev-skill title="{{skill.title}}" score="{{skill.score}}"></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
