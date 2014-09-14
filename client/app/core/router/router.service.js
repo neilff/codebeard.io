@@ -9,6 +9,20 @@
  *
  *  @return {Service}
  */
-module.exports = /* @ngInject */ function Router() {
-  return {};
+module.exports = /* @ngInject */ function Router($stateParams) {
+
+  /**
+   *  Get project id from $stateParams
+   *
+   *  @method getProjectId
+   *
+   *  @return {String}
+   */
+  function getProjectId() {
+    return $stateParams._id;
+  }
+
+  return {
+    getProjectId: getProjectId
+  };
 };

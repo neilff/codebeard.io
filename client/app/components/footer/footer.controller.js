@@ -25,8 +25,7 @@ module.exports = /* @ngInject */ function FooterController($scope, Twitter, Cont
   function init() {
     Twitter.getLatestTweet()
       .then(function(response) {
-        $scope.twitter = response.result[0];
-        console.log($scope.twitter);
+        $scope.twitter = response;
       })
       .then(null, function() {
         $scope.twitter = 'Unable to get latest tweet.';

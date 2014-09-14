@@ -11,14 +11,17 @@
 module.exports = /* @ngInject */ function Twitter(Server) {
 
   /**
-   *  This function will return the latest tweet
+   *  This function will return the latest tweet text
    *
    *  @method getLatestTweet
    *
    *  @return {Promise}
    */
   function getLatestTweet() {
-    return Server.jsonp('/twitter/getlasttweet');
+    return Server.jsonp('/twitter/getlasttweet')
+      .then(function(response) {
+        return response.result[0].text;
+      });
   }
 
   return {

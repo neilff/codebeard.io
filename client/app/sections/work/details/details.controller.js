@@ -13,7 +13,7 @@ var _ = require('lodash');
  *
  *  @return {Controller}
  */
-module.exports = /* @ngInject */ function WorkDetailsController($scope, $stateParams, Work) {
+module.exports = /* @ngInject */ function WorkDetailsController($scope, Router, Work) {
 
   /**
    *  Build out the next and previous links on init
@@ -40,7 +40,7 @@ module.exports = /* @ngInject */ function WorkDetailsController($scope, $statePa
    *  @return {undefined}
    */
   function findProject() {
-    $scope.project = _.findWhere(Work, {id: $stateParams._id});
+    $scope.project = _.findWhere(Work, {id: Router.getProjectId()});
   }
 
   /**
