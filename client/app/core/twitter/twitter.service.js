@@ -23,6 +23,5 @@ module.exports = function Twitter(Server) {
 
   return {
     getLatestTweet: getLatestTweet
-  }
-}
-
+  };
+};

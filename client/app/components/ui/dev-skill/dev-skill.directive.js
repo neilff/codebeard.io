@@ -16,8 +16,8 @@ module.exports = function appDevSkill() {
       score: '@'
     },
     templateUrl: 'app/components/ui/dev-skill/dev-skill.html',
-    link: function($scope, elem, attrs) {
+    link: function($scope, elem) {
       elem.find('span').css('width', $scope.score + '%');
     }
   };
-}
+};

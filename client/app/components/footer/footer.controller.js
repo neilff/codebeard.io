@@ -28,7 +28,7 @@ module.exports = function FooterController($scope, Twitter, Content) {
         $scope.twitter = response.result[0];
         console.log($scope.twitter);
       })
-      .then(null, function(err) {
+      .then(null, function() {
         $scope.twitter = 'Unable to get latest tweet.';
       });
   }
@@ -44,4 +44,4 @@ module.exports = function FooterController($scope, Twitter, Content) {
   });
 
   init();
-}
+};

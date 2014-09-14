@@ -56,7 +56,7 @@ module.exports = function Server($http, API_BASE_URL) {
    *  @return {Promise}
    */
   function jsonp(path, config) {
-    var config = config || {};
+    config = config || {};
 
     config.params = config.params || {};
     config.params.callback = 'JSON_CALLBACK';
@@ -72,5 +72,5 @@ module.exports = function Server($http, API_BASE_URL) {
     post: post,
     jsonp: jsonp
   };
-}
+};
 

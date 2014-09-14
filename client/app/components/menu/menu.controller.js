@@ -13,4 +13,4 @@
  */
 module.exports = function MenuController($scope, Content) {
   $scope.menu = Content.menuLinks;
-}
+};

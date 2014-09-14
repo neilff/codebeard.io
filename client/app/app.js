@@ -1,7 +1,7 @@
 'use strict';
 
 var angular = require('angular');
-var angularSanitize = require('angular-sanitize');
+require('angular-sanitize');
 
 /**
  *  Require Core Modules

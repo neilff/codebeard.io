@@ -1,7 +1,5 @@
 'use strict';
 
-var _ = require('lodash');
-
 /**
  *  This module exports the controller used to display a
  *  list of work.
