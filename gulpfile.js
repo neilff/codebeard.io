@@ -107,6 +107,28 @@ gulp.task('browserify:build', function() {
 });
 
 /**
+ *  Copy Files Task
+ *
+ *  Used to copy static files for
+ */
+gulp.task('copy', function() {
+  gulp.src(config.index)
+    .pipe(gulp.dest(config.dist));
+
+  gulp.src(config.html)
+    .pipe(gulp.dest(config.distApp));
+
+  gulp.src(config.css)
+    .pipe(gulp.dest(config.distCss));
+
+  gulp.src(config.fonts)
+    .pipe(gulp.dest(config.distFonts));
+
+  gulp.src(config.images)
+    .pipe(gulp.dest(config.distImages));
+});
+
+/**
  *  Views Task
  *
  *  Move HTML files to dist/
@@ -178,8 +200,7 @@ gulp.task('styles:build', function() {
     .pipe(autoprefixer('last 2 versions', '> 1%', 'ie 8'))
     .pipe(rename('styles.css'))
     .pipe(minifyCSS())
-    .pipe(gulp.dest(config.distCss))
-    .pipe(refresh(lrserver));
+    .pipe(gulp.dest(config.distCss));
 });
 
 /**
@@ -224,5 +245,5 @@ gulp.task('serve', ['watch'], function() {
  *  Compile build for deployment
  */
 gulp.task('build', function(callback) {
-  runSequence('clean', ['lint:build', 'browserify:build', 'styles:build'], 'views', 'images', 'css', 'fonts', callback);
+  runSequence('clean', ['lint:build', 'browserify:build', 'styles:build'], 'copy', callback);
 });
