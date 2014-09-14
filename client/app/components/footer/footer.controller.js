@@ -13,7 +13,7 @@ var _ = require('lodash');
  *
  *  @return {Controller}
  */
-module.exports = function FooterController($scope, Twitter, Content) {
+module.exports = /* @ngInject */ function FooterController($scope, Twitter, Content) {
 
   /**
    *  On init, get the latest twitter status

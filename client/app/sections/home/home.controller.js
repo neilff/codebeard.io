@@ -12,7 +12,7 @@ var _ = require('lodash');
  *
  *  @return {Controller}
  */
-module.exports = function HomeController($scope, Content) {
+module.exports = /* @ngInject */ function HomeController($scope, Content) {
 
   /**
    *  Simple function for traveling to the resume location

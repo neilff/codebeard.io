@@ -9,7 +9,7 @@ var $ = require('jquery');
  *
  *  @return {Directive}
  */
-module.exports = function appScrollTo() {
+module.exports = /* @ngInject */ function appScrollTo() {
   return {
     restrict: 'A',
     scope: {

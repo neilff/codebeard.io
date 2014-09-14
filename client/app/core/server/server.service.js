@@ -8,7 +8,7 @@
  *
  *  @return {Service}
  */
-module.exports = function Server($http, API_BASE_URL) {
+module.exports = /* @ngInject */ function Server($http, API_BASE_URL) {
 
   /**
    *  Wrapper for $http.get

@@ -10,6 +10,6 @@ var data = require('./work');
  *
  *  @return {Service}
  */
-module.exports = function Work() {
+module.exports = /* @ngInject */ function Work() {
   return data;
 };

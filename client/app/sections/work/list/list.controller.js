@@ -11,6 +11,6 @@
  *
  *  @return {Controller}
  */
-module.exports = function WorkListController($scope, Work) {
+module.exports = /* @ngInject */ function WorkListController($scope, Work) {
   $scope.projects = Work;
 };

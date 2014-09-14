@@ -9,13 +9,6 @@
  *
  *  @return {Service}
  */
-module.exports = function Router() {
-
-  function getId() {
-    return 'hello world';
-  }
-
-  return {
-    getId: getId
-  };
+module.exports = /* @ngInject */ function Router() {
+  return {};
 };

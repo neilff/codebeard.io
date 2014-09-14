@@ -13,7 +13,7 @@ var _ = require('lodash');
  *
  *  @return {Controller}
  */
-module.exports = function WorkDetailsController($scope, $stateParams, Work) {
+module.exports = /* @ngInject */ function WorkDetailsController($scope, $stateParams, Work) {
 
   /**
    *  Build out the next and previous links on init

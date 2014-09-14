@@ -1,12 +1,17 @@
 'use strict';
 
 var gulp = require('gulp');
+var runSequence = require('run-sequence');
 var jshint = require('gulp-jshint');
 var browserify = require('gulp-browserify');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var rename = require('gulp-rename');
+var ngAnnotate = require('gulp-ng-annotate');
+var uglify = require('gulp-uglify');
+var minifyCSS = require('gulp-minify-css');
+var rimraf = require('gulp-rimraf');
 
 var refresh = require('gulp-livereload');
 var lrserver = require('tiny-lr')();
@@ -51,7 +56,18 @@ var config = {
 gulp.task('lint', function() {
   gulp.src(config.js)
     .pipe(jshint())
-    .pipe(jshint.reporter('default'));
+    .pipe(jshint.reporter('jshint-stylish'));
+});
+
+/**
+ *  JSLint Build Task
+ *
+ *  Lint all JS files
+ */
+gulp.task('lint:build', function() {
+  return gulp.src(config.js)
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'));
 });
 
 /**
@@ -72,6 +88,22 @@ gulp.task('browserify', function() {
     // Output it to our dist folder
     .pipe(gulp.dest(config.distApp))
     .pipe(refresh(lrserver));
+});
+
+/**
+ *  Browserify Build Task
+ *
+ *  Browserify the app.js file
+ */
+gulp.task('browserify:build', function() {
+  return gulp.src([config.app])
+    .pipe(browserify({
+      insertGlobals: true
+    }))
+    .pipe(concat(config.bundle))
+    .pipe(ngAnnotate())
+    .pipe(uglify())
+    .pipe(gulp.dest(config.distApp));
 });
 
 /**
@@ -133,7 +165,22 @@ gulp.task('styles', function() {
     .pipe(rename('styles.css'))
     .pipe(gulp.dest(config.distCss))
     .pipe(refresh(lrserver));
-  });
+});
+
+/**
+ *  Styles Build Task
+ *
+ *  Compile CSS and move to dist
+ */
+gulp.task('styles:build', function() {
+  return gulp.src(config.scss)
+    .pipe(sass())
+    .pipe(autoprefixer('last 2 versions', '> 1%', 'ie 8'))
+    .pipe(rename('styles.css'))
+    .pipe(minifyCSS())
+    .pipe(gulp.dest(config.distCss))
+    .pipe(refresh(lrserver));
+});
 
 /**
  *  Watch Task
@@ -154,6 +201,14 @@ gulp.task('watch', ['lint', 'browserify', 'views', 'images', 'css', 'styles', 'f
 });
 
 /**
+ *  Clean Task
+ */
+gulp.task('clean', function() {
+  return gulp.src(config.dist, { read: false })
+    .pipe(rimraf());
+});
+
+/**
  *  Serve Task
  *
  *  Setup livereload, watch tasks
@@ -161,4 +216,13 @@ gulp.task('watch', ['lint', 'browserify', 'views', 'images', 'css', 'styles', 'f
 gulp.task('serve', ['watch'], function() {
   server.listen(serverport);
   lrserver.listen(livereloadport);
+});
+
+/**
+ *  Build Task
+ *
+ *  Compile build for deployment
+ */
+gulp.task('build', function(callback) {
+  runSequence('clean', ['lint:build', 'browserify:build', 'styles:build'], 'views', 'images', 'css', 'fonts', callback);
 });

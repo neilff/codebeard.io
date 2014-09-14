@@ -10,7 +10,7 @@
  *
  *  @return {Config}
  */
-module.exports = function RouterConfig($urlRouterProvider, $stateProvider) {
+module.exports = /* @ngInject */ function RouterConfig($urlRouterProvider, $stateProvider) {
 
   /**
    *  Config Default Route

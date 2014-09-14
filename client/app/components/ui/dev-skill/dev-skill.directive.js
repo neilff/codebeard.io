@@ -8,7 +8,7 @@
  *
  *  @return {Directive}
  */
-module.exports = function appDevSkill() {
+module.exports = /* @ngInject */ function appDevSkill() {
   return {
     restrict: 'A',
     scope: {

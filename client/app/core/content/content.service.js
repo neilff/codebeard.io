@@ -10,6 +10,6 @@ var content = require('./content');
  *
  *  @return {Service}
  */
-module.exports = function Content() {
+module.exports = /* @ngInject */ function Content() {
   return content;
 };

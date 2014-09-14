@@ -8,7 +8,7 @@
  *
  *  @return {Service}
  */
-module.exports = function Twitter(Server) {
+module.exports = /* @ngInject */ function Twitter(Server) {
 
   /**
    *  This function will return the latest tweet

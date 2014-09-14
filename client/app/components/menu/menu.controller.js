@@ -11,6 +11,6 @@
  *
  *  @return {Controller}
  */
-module.exports = function MenuController($scope, Content) {
+module.exports = /* @ngInject */ function MenuController($scope, Content) {
   $scope.menu = Content.menuLinks;
 };
