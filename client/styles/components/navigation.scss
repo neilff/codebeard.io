@@ -1,85 +1,80 @@
-#navigation {
+/**
+ *  Mobile
+ */
+.navigation-wrapper {
+  // background: rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  font-family: $header-font;
+  font-weight: 100;
 
   .logo {
-    width: 20%;
-    max-width: 75px;
-    display: inline-block;
-
-    img {
-      padding-top: 3px;
-    }
-  }
-
-  .brand {
-    text-transform: uppercase;
-    font-family: Lato;
-    font-size: 12pt;
-    background-color: #35cffd;
-    display: inline-block;
-    width: 80%;
-    max-width: 150px;
-    height: 51px;
-    padding-top: 14px;
-    color: #efefef;
-    text-align: center;
-    font-weight: 100;
-    a {
-      @include transition();
-      color: $white;
-      &:hover {
-        color: $grey;
-      }
-    }
+    margin: 10px 0;
+    height: 64px;
+    width: 64px;
   }
 
   .links {
-    background: $white;
-    padding:  10px 15px;
-    float: right;
-    margin: 0;
-    list-style-type: none;
-    text-transform: uppercase;
-    font-size: 0.65em;
-
-    li {
-      float: left;
-      padding: 0 10px;
-
-      a {
-        @include transition();
-        color: $blue;
-        padding: 5px;
-        &:hover {
-          color: $turq / 2;
-        }
-      }
-
-      &:after {
-        content: '/';
-        padding-left: 20px;
-      }
-
-      &:last-child:after {
-        padding-left: 0;
-        content: '';
-      }
-    }
-
-    .highlight {
-      a {
-        color: $turq * 1.25;
-        border-bottom: 1px solid $blue * 3;
-      }
-    }
-
-    .divider {
-      padding: 0 5px;
-    }
+    text-align: center;
+    font-size: $copy-large;
   }
 
-  border-top: 5px solid $lightblue;
-  font-weight: 100;
-  width: 100%;
-  position: fixed;
-  z-index: 999;
+  .link {
+    display: inline-block;
+    padding: 10px 0;
+    margin: 10px 25px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #0f0f0f;
+    font-size: 24px;
+
+    .bar {
+      width: 100%;
+      display: inline-block;
+      border-bottom: 5px solid black;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      transition: all 300ms;
+    }
+
+    &:hover {
+      .bar {
+        opacity: 1;
+        bottom: 5px;
+      }
+    }
+  }
+}
+
+/**
+ *  Tablet Vertical
+ */
+@media screen and (min-width: 768px) {
+    .navigation-wrapper {
+
+    }
+}
+
+/**
+ *  Tablet Horizontal
+ */
+@media screen and (min-width: 992px) {
+    .navigation-wrapper {
+
+    }
+}
+
+/**
+ *  Desktop
+ */
+@media screen and (min-width: 1200px) {
+    .navigation-wrapper {
+
+    }
 }

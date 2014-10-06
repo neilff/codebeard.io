@@ -11,62 +11,35 @@
   <link rel="shortcut icon" href="img/favicon.ico">
 
   <!-- google font -->
-  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700|Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
 
   <!-- css files -->
-  <link rel="stylesheet" href="css/foundation.min.css" />
-  <link rel="stylesheet" href="css/font-awesome.css" />
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body ng-controller="FooterController">
 
-  <header id="navigation" ng-controller="MenuController">
-    <div class="row">
-      <div class="small-6 large-3 columns">
-        <span class="logo"><img src="img/codebeard.svg" /></span><span class="brand"><a href="#/">Codebeard.io</a></span>
-      </div>
-      <nav class="small-6 large-9 columns">
-        <ul id="menu" class="navigation links">
-          <li ng-repeat="link in menu" app-menu-link><a href="{{link.url}}" alt="{{link.title}}">{{link.title}}</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <div class="view-container">
-    <div ui-view class="view-frame"></div>
-  </div>
-
-  <div id="footer">
-    <div id="upper-footer" class="row">
-      <div class="large-4 columns">
-        <h3 class="footer">Contact</h3>
-        <p>P: {{contact.phone}}</p>
-        <p>E: <a href="mailto:{{contact.email}}" alt="Email me">{{contact.email}}</a></p>
-      </div>
-      <div class="large-4 columns">
-        <h3 class="footer">Availability</h3>
-        <p ng-bind-html="currentlyWorking"></p>
-      </div>
-      <div class="large-4 columns">
-        <h3 class="footer">Latest Tweet</h3>
-        <div id="twitter-feed">
-          <a href="http://twitter.com/neil_fenton" target="_blank">@neil_fenton: {{twitter}}</a>
+  <div class="navigation-wrapper">
+    <div class="navigation container">
+      <div class="row">
+        <div class="col-xs-12">
+          <a href="#/home"><img src="img/codebeard.svg" class="logo" alt="Codebeard.io"></a>
+          <div class="links pull-right">
+            <a href="#" class="link">About <span class="bar"></span></a>
+            <a href="#" class="link">Work <span class="bar"></span></a>
+            <a href="#" class="link">Contact <span class="bar"></span></a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div id="lower-footer">
-    <div class="row">
-      <div class="large-5 columns">
-        <p ng-bind-html="footerCopyright"></p>
-      </div>
-      <div class="large-7 columns">
-        <ul>
-          <li ng-repeat="link in footerLinks"><a href="{{link.url}}"><i class="icon-{{link.icon}}" alt="{{link.title}}"></i> <span>{{link.title | uppercase}}</span></a></li>
-        </ul>
-      </div>
+  <div class="hero-unit">
+    <div class="background-video">
+      <div class="filter"></div>
+      <video width="100%" height="100%" autoplay loop>
+        <source src="video/background-video.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 

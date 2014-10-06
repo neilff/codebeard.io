@@ -40,12 +40,14 @@ var config = {
   distApp: 'dist/app',
   distImages: 'dist/img',
   distCss: 'dist/css',
+  distVideo: 'dist/video',
   distFonts: 'dist/fonts',
   dist: 'dist/',
   images: ['client/img/**/*'],
   css: ['client/styles/vendor/**/*.css'],
   fonts: ['client/fonts/**/*'],
-  scss: ['client/styles/*.scss']
+  scss: ['client/styles/**/*.scss'],
+  video: ['client/video/**/*']
 };
 
 /**
@@ -126,6 +128,9 @@ gulp.task('copy', function() {
 
   gulp.src(config.images)
     .pipe(gulp.dest(config.distImages));
+
+  gulp.src(config.video)
+    .pipe(gulp.dest(config.distVideo));
 });
 
 /**
@@ -150,6 +155,16 @@ gulp.task('views', function() {
 gulp.task('images', function() {
   gulp.src(config.images)
     .pipe(gulp.dest(config.distImages));
+});
+
+/**
+ *  Video Task
+ *
+ *  Move Video to dist/
+ */
+gulp.task('video', function() {
+  gulp.src(config.video)
+    .pipe(gulp.dest(config.distVideo));
 });
 
 /**
@@ -178,7 +193,7 @@ gulp.task('fonts', function() {
  *  Compile CSS and move to dist
  */
 gulp.task('styles', function() {
-  gulp.src(config.scss)
+  gulp.src(['client/styles/*.scss'])
     // Prevent Gulp from crashing when it hits an error compiling SCSS
     .pipe(sass({onError: function(e) { console.log(e); } }))
 
@@ -206,7 +221,7 @@ gulp.task('styles:build', function() {
 /**
  *  Watch Task
  */
-gulp.task('watch', ['lint', 'browserify', 'views', 'images', 'css', 'styles', 'fonts'], function() {
+gulp.task('watch', ['lint', 'browserify', 'views', 'images', 'css', 'video', 'styles', 'fonts'], function() {
   gulp.watch([config.js], [
     'lint',
     'browserify'
